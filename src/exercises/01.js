@@ -8,9 +8,9 @@ import {Switch} from '../switch'
 class Toggle extends React.Component {
 
   toggle = () => {
-    this.setState({
-      on: !this.state.on
-    }, () => {
+    this.setState(({on}) => ({
+      on: !on
+    }), () => {
       this.props.onToggle(this.state.on);
     });
   };
