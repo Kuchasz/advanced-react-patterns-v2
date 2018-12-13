@@ -17,8 +17,8 @@ class Toggle extends React.Component {
   //    Note that they will _not_ have access to Toggle instance properties
   //    like `this.state.on` or `this.toggle`.
 
-  static On = ({on}) => !on ? 'The button is off' : null;
-  static Off = ({on}) => on ? 'The button is on' : null;
+  static On = ({on, children}) => on ? children : null;
+  static Off = ({on, children}) => !on ? children : null;
   static Button = ({on, toggle}) => <Switch on={on} onClick={toggle} />;
 
   state = {on: false}
